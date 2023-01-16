@@ -1,6 +1,6 @@
 import asyncio
 import urllib.request
-from os import path
+import os
 import urllib.request
 import aiohttp
 from tiktokapipy.async_api import AsyncTikTokAPI
@@ -49,7 +49,9 @@ class tt_scraper():
 
                         # download video as .mp4
                         dwn_link = await self.save_video(video)
-                        directory = 'videos/'
+                        directory = './videos/'
+                        if not os.path.exists(directory):
+                            os.mkdir(directory)
                         file_name = directory+str(vid_id)+'.mp4'
                         print(file_name)
                         urllib.request.urlretrieve(dwn_link, file_name) 
