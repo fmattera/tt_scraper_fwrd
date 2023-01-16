@@ -1,0 +1,2 @@
+aiohttp==3.8.3
+tiktokapipy==0.1.9.post1
